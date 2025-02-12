@@ -1,31 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 08:26:15 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 12:37:30 by malbayra         ###   ########.fr       */
+/*   Created: 2025/02/12 11:09:06 by malbayra          #+#    #+#             */
+/*   Updated: 2025/02/12 11:45:46 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ac_check(int ac, char **av)
+void	error_free_msg(t_game *game, char *error_msg)
 {
-	if (ac != 2)
-		error_free_msg(NULL, "Error: Invalid number of ac");
-	if (*av[1] == '\0')
-		error_free_msg(NULL, "Map is null");
-}
-
-int	main(int ac, char **av)
-{
-	t_game game;
-	ac_check(ac, av);
-	game = init_game();
-    
-    
-    
+	ft_putendl_fd(error_msg, STDERR_FILENO);
+	exit(EXIT_FAILURE);
 }
