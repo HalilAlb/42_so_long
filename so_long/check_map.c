@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:15:59 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 18:10:09 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:19:15 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,42 +22,41 @@ int	check_file_extension(char *map_file)
 	return (0);
 }
 
-int check_str(char *str,int c)
+int	check_str(char *str, int c)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
-		if(str[i] == c)
+		if (str[i] == c)
 			return (1);
 		i++;
 	}
 	return (0);
 }
 
-void check_count_el(t_game *game)
+void	check_count_el(t_game *game)
 {
-	int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	i = -1;
-	while(++i  < game->map.row)
+	while (++i < game->map.row)
 	{
 		j = -1;
-		while(++j < game->map.column)
+		while (++j < game->map.column)
 		{
-			if(check_str("ECP01",game->map.map[i][j]) == 0)
+			if (check_str("ECP01", game->map.map[i][j]) == 0)
 				error_free_msg(game, "Error: Invalid element in the map");
-			if(game->map.map[i][j] == 'E')
+			if (game->map.map[i][j] == 'E')
 				game->map.exit++;
 			else if (game->map.map[i][j] == 'C')
 				game->map.collectibles++;
 			else if (game->map.map[i][j] == 'P')
 			{
 				game->map.player++;
-				game->map.player_position.x = j;
-				game->map.player_position.y = i;
+				game->map.player_position = (t_position){i, j};
 			}
 		}
 	}
