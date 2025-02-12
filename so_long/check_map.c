@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:15:59 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 18:19:15 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/12 18:55:40 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,21 @@ int	check_file_extension(char *map_file)
 	return (0);
 }
 
+void	check_bor(t_map *map)
+{
+	int	i;
+
+	i = -1;
+	while (++i < map->row)
+		if (map->map[i][0] != '1' || map->map[i][map->column - 1] != '1')
+			return (0);
+	i = -1;
+	while (++i < map->column)
+		if (map->map[0][i] != '1' || map->map[map->row - 1][i] != '1')
+			return (0);
+	return (1);
+}
+
 int	check_str(char *str, int c)
 {
 	int	i;
@@ -34,6 +49,16 @@ int	check_str(char *str, int c)
 		i++;
 	}
 	return (0);
+}
+
+void	check_ecp(t_game *game)
+{
+	if (game->map.exit == 0 || game->map.exit > 1)
+		error_free_msg(game, "Error: Invalid number of exit");
+	if (game->map.collectibles == 0 || game->map.collectibles < 1)
+		error_free_msg(game, "Error: Invalid number of collectibles");
+	if (game->map.player == 0 || game->map.player > 1)
+		error_free_msg(game, "Error: Invalid number of player");
 }
 
 void	check_count_el(t_game *game)
@@ -60,4 +85,5 @@ void	check_count_el(t_game *game)
 			}
 		}
 	}
+	check_ecp(game);
 }
