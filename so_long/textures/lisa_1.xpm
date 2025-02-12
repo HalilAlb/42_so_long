@@ -54,7 +54,7 @@ static char *e1d054f3707344fda1609ec687530cacA0G3HLIJHC2ObKh4[] = {
 "c  c #6C433C",
 "v  c #6A4739",
 "b  c #74423B",
-"n  c #794539",
+"n  c #794539"
 "m  c #352C41",
 "M  c #523B46",
 "N  c #6C3D42",
@@ -302,3 +302,4 @@ static char *e1d054f3707344fda1609ec687530cacA0G3HLIJHC2ObKh4[] = {
 "lXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXkXhXhXlXlXlXlXlXlXlXlXlXlXgXfXgXgXgXgXlXlXkXkXlXlXlXhXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlX",
 "lXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXkXkXhXhXlXlXlXlXlXlXlXlXlXlXlXhXhXhXlXjXlXkXkXkXlXlXlXhXhXhXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlXlX"
 };
+

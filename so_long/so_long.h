@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 08:26:28 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 13:36:13 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:14:48 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,6 @@ typedef struct s_game
 
 void			error_free_msg(t_game *game, char *error_msg);
 t_game			init_game(void);
+int				check_file_extension(char *map_file);
 
 #endif
