@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 08:26:15 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 16:35:29 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/12 16:52:51 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int	main(int ac, char **av)
 	ac_check(ac, av);
 	game = init_game();
 	get_map(av[1], &game);
-	
+	unioncheck(&game);
 }

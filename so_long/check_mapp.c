@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_map.c                                        :+:      :+:    :+:   */
+/*   check_mapp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/12 14:15:59 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 16:54:38 by malbayra         ###   ########.fr       */
+/*   Created: 2025/02/12 16:54:53 by malbayra          #+#    #+#             */
+/*   Updated: 2025/02/12 16:59:38 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	check_file_extension(char *map_file)
+int chech_shape(t_game *game)
 {
-	size_t i;
+    size_t i;
+    size_t j;
 
-	i = ft_strlen(map_file) - 4;
-	if (ft_strncmp(&map_file[i], ".ber", 4) == 0)
-		return (1);
-	return (0);
+    j = game->map.column;
+    i = 0;
+    while(game->map.map[i] != NULL)
+    {
+        if (j != ft_strlen(game->map.map[i]))
+            return (0);
+        i++;   
+    }
+    
+}
+
+int unioncheck(t_game *game)
+{
+    if(chech_shape(game) == 0)
+        error_free_msg(game, "Error: Map is not rectangular");
+    
 }
