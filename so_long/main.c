@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 08:26:15 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 16:52:51 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/12 17:53:10 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ void	ac_check(int ac, char **av)
 
 int	main(int ac, char **av)
 {
-	t_game game;
+	t_game	game;
+
 	ac_check(ac, av);
 	game = init_game();
 	get_map(av[1], &game);
