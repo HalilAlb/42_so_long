@@ -1,11 +1,10 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iinc
+CFLAGS =  -Iinc
 MLXFLAGS = -L ./mlx -lmlx -Ilmlx -lXext -lX11
 LIBFT = libft/libft.a
 RM = rm -rf
 NAME = so_long
 
-# Source files
 SRCS = check_map.c \
 	check_mapp.c \
 	check_mappp.c \

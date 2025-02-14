@@ -1,6 +1,7 @@
 
 #include    "so_long.h"
 
+
 int	quit_game(t_game *game)
 {
 	error_free(game);

@@ -22,7 +22,7 @@
 
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *s1, char *s2);
+// char	*ft_strjoin(char *s1, char *s2);
 char	*get_main_line(char *putline);
 char	*get_putremain(char *putline);
 char	*get_read(int fd, char *putline);

@@ -1,5 +1,5 @@
 #include "so_long.h"
-
+#include "stdbool.h"
 void	put_player_block(t_game *game)
 {
 	char	*moves_str;

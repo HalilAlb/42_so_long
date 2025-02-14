@@ -31,5 +31,8 @@ int	unioncheck(t_game *game)
 {
 	if (check_rect(game) == 0)
 		error_free_msg(game, "Error: Map is not rectangular");
-    
+    check_count_element(game);
+	if (check_border(&game->map) == 0)
+		error_free_msg(game, "Error : Invalid map borders");
+	check_path(game);
 }

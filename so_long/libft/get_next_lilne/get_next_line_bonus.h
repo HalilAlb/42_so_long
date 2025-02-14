@@ -20,7 +20,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-char	*ft_strjoin(char *s1, char *s2);
+// char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 char	*get_next_line(int fd);
