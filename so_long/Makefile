@@ -19,10 +19,9 @@ SRCS = check_map.c \
 	utils.c \
 	main.c
 
-# Object files
+
 OBJS = $(SRCS:.c=.o)
 
-# Rules
 all: $(NAME)
 
 $(NAME): $(OBJS)
@@ -53,7 +52,3 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
-
-run: all clean
-
-.SILENT:
