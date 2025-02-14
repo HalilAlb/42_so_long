@@ -17,7 +17,14 @@
 # include "libft/get_next_lilne/get_next_line.h"
 # include "libft/libft.h"
 # include "minilibx-linux/mlx.h"
+
 # include <stdlib.h>
+# define WALL_BLOCK "./textures/wall.xpm"
+# define FLOOR_BLOCK "./textures/flor.xpm"
+# define PLAYER_BLOCK "./tesxtures/arwen.xpm"
+# define COLLECTIBLES_BLOCK "./textures/rings.xpm"
+# define EXIT_BLOCK "./textrues/door.xpm"
+# define BLOCK_SIZE 64
 
 typedef struct s_position
 {

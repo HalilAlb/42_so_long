@@ -28,4 +28,8 @@ int	main(int ac, char **av)
 	game = init_game();
 	get_map(av[1], &game);
 	unioncheck(&game);
+	init_mlx(&game);
+	render_map(&game);
+	hook_n_run(&game);
+	return (EXIT_SUCCESS);
 }
