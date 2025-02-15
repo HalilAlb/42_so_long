@@ -1,5 +1,5 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iinc
+CFLAGS = -Wall -Wextra -Werror -Iinc -g
 MLXFLAGS = -L ./minilibx-linux -lmlx -I./minilibx-linux -lXext -lX11
 LIBFT = libft/libft.a
 PRINTF = libft/ft_printf/libftprintf.a
@@ -25,7 +25,6 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	# Libft'i, get_next_line ve ft_printf ile birlikte derle
 	$(MAKE) -C libft/get_next_lilne
 	$(MAKE) -C libft/ft_printf
 	$(MAKE) -C libft
@@ -42,7 +41,6 @@ clean:
 	$(RM) $(OBJS)
 
 fclean: clean
-	# get_next_line ve ft_printf'ı tamamen temizle
 	$(MAKE) fclean -C libft/get_next_lilne
 	$(MAKE) fclean -C libft/ft_printf
 	$(MAKE) fclean -C libft

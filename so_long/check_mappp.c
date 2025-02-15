@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:57:15 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 11:50:23 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 14:27:50 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ int	flood_fill(t_map *map, t_position curr, char **temp_map)
 	flood_fill(map, (t_position){curr.x - 1, curr.y}, temp_map);
 	flood_fill(map, (t_position){curr.x, curr.y + 1}, temp_map);
 	flood_fill(map, (t_position){curr.x, curr.y - 1}, temp_map);
-	ft_printf("Collectibles: %d, Exit: %d\n", collectibles, exit_flag);
 	return (collectibles == map->collectibles && exit_flag);
 }
 

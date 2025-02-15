@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 08:26:28 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 11:51:50 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 12:50:29 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_game
 	t_block		block;
 	t_map		map;
 }				t_game;
+
 void			ac_check(int ac, char **av);
 int				check_file_extension(char *map_file);
 int				check_bor(t_map *map);

@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:45 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 09:12:49 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 12:13:02 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*get_putremain(char *putline)
 		return (NULL);
 	i++;
 	j = 0;
-	while (putline[i + j] != '\0')
+	while (putline[j + i] != '\0')
 	{
 		str[j] = putline[j + i];
 		j++;

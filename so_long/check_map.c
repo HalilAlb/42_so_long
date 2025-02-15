@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:15:59 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 11:09:31 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 14:17:00 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	check_count_el(t_game *game)
 			else if (game->map.map[i][j] == 'P')
 			{
 				game->map.player += 1;
-				game->map.player_position = (t_position){i, j};
+				game->map.player_position = (t_position){j, i};
 			}
 		}
 	}
