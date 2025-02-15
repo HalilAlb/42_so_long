@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:15:59 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 18:55:40 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 08:05:35 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	check_file_extension(char *map_file)
 	return (0);
 }
 
-void	check_bor(t_map *map)
+int	check_bor(t_map *map)
 {
 	int	i;
 

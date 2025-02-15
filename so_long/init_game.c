@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   init_game.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 15:07:32 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 09:16:33 by malbayra         ###   ########.fr       */
+/*   Created: 2025/02/12 11:31:11 by malbayra          #+#    #+#             */
+/*   Updated: 2025/02/15 08:30:49 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "so_long.h"
 
-# ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 4
-# endif
-
-# include <unistd.h>
-# include <stdlib.h>
-# include "../libft.h"
-
-
-
-char	*ft_strjoin(char *s1, char *s2);
-char	*get_main_line(char *putline);
-char	*get_putremain(char *putline);
-char	*get_read(int fd, char *putline);
-char	*get_next_line(int fd);
-
-#endif
+t_game	init_game(void)
+{
+	return ((t_game){
+		.map.map = NULL,
+		.map.row = 0,
+		.map.column = 0,
+		.map.collectibles = 0,
+		.map.exit = 0,
+		.map.player = 0,
+		.block.collectibles = NULL,
+		.block.exit = NULL,
+		.block.floor = NULL,
+		.block.player = NULL,
+		.block.wall = NULL,
+		.moves = -1,
+	});
+}

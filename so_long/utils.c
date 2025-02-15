@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/15 07:57:38 by malbayra          #+#    #+#             */
+/*   Updated: 2025/02/15 09:25:46 by malbayra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 char	*ft_strncpy(char *dest, const char *src, size_t n)
@@ -35,9 +47,9 @@ char	*f_strchr(const char *str, int c)
 
 char	*trim_free(char *s1, char const *set)
 {
-	size_t	beg;
-	size_t	end;
-	char	*trimmed_str;
+	size_t beg;
+	size_t end;
+	char *trimmed_str;
 
 	if (!s1 || !set)
 		return (NULL);
@@ -45,7 +57,7 @@ char	*trim_free(char *s1, char const *set)
 	while (s1[beg] != '\0' && f_strchr(set, s1[beg]) != NULL)
 		beg += 1;
 	end = ft_strlen(s1 + beg);
-	while (end > beg && strchr(set, s1[(beg + end) - 1]) != NULL)
+	while (end > beg && f_strchr(set, s1[(beg + end) - 1]) != NULL)
 		end -= 1;
 	trimmed_str = malloc((end + 1) * sizeof(char));
 	if (trimmed_str == NULL)

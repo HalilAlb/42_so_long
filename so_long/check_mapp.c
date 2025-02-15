@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:54:53 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 17:54:37 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 08:40:31 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,15 @@ int	check_rect(t_game *game)
 			return (0);
 		i++;
 	}
+	return (1);
 }
 
-int	unioncheck(t_game *game)
+void	unioncheck(t_game *game)
 {
 	if (check_rect(game) == 0)
 		error_free_msg(game, "Error: Map is not rectangular");
-    check_count_element(game);
-	if (check_border(&game->map) == 0)
+	check_count_el(game);
+	if (check_bor(&game->map) == 0)
 		error_free_msg(game, "Error : Invalid map borders");
 	check_path(game);
 }
