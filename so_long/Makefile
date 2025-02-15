@@ -39,7 +39,6 @@ clean:
 	$(MAKE) clean -C libft/get_next_lilne
 	$(MAKE) clean -C libft/ft_printf
 	$(MAKE) clean -C libft
-	$(MAKE) clean -C minilibx-linux
 	$(RM) $(OBJS)
 
 fclean: clean
@@ -47,7 +46,6 @@ fclean: clean
 	$(MAKE) fclean -C libft/get_next_lilne
 	$(MAKE) fclean -C libft/ft_printf
 	$(MAKE) fclean -C libft
-	$(MAKE) fclean -C minilibx-linux
 	$(RM) $(NAME)
 
 re: fclean all

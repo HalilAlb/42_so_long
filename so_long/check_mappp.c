@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   check_mappp.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/15 10:57:15 by malbayra          #+#    #+#             */
+/*   Updated: 2025/02/15 11:50:23 by malbayra         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 char	**copy_map(t_game *game)
@@ -24,32 +36,49 @@ char	**copy_map(t_game *game)
 
 int	flood_fill(t_map *map, t_position curr, char **temp_map)
 {
-	static int	collectibles = 0;
-	static int	exit = 0;
+	static int	collectibles;
+	static int	exit_flag;
 
-	if (temp_map[curr.y][curr.x] == '1')
+	if (curr.x < 0 || curr.x >= map->column || curr.y < 0 || curr.y >= map->row)
 		return (0);
+	if (temp_map[curr.y][curr.x] == '1' || temp_map[curr.y][curr.x] == 'F')
+		return (0);
+	if (temp_map[curr.y][curr.x] == 'C')
+		collectibles++;
 	else if (temp_map[curr.y][curr.x] == 'E')
-		exit = 1;
-	else if (temp_map[curr.y][curr.x] == 'C')
-		collectibles += 1;
-	temp_map[curr.y][curr.x] = '1';
+		exit_flag = 1;
+	temp_map[curr.y][curr.x] = 'F';
 	flood_fill(map, (t_position){curr.x + 1, curr.y}, temp_map);
 	flood_fill(map, (t_position){curr.x - 1, curr.y}, temp_map);
 	flood_fill(map, (t_position){curr.x, curr.y + 1}, temp_map);
 	flood_fill(map, (t_position){curr.x, curr.y - 1}, temp_map);
-	return (collectibles == map->collectibles && exit);
+	ft_printf("Collectibles: %d, Exit: %d\n", collectibles, exit_flag);
+	return (collectibles == map->collectibles && exit_flag);
+}
+
+void	reset_flood_fill(t_map *map, t_position start, char **temp_map,
+		int *result)
+{
+	int	collectibles;
+	int	exit_flag;
+
+	collectibles = 0;
+	exit_flag = 0;
+	*result = flood_fill(map, start, temp_map);
 }
 
 void	check_path(t_game *game)
 {
-	char	**temp_map;
+	char **temp_map = copy_map(game);
+	int result;
 
-	temp_map = copy_map(game);
-	if (flood_fill(&game->map, game->map.player_position, temp_map) == 0)
+
+	reset_flood_fill(&game->map, game->map.player_position, temp_map, &result);
+
+	if (!result)
 	{
 		free_matrix(temp_map);
-		error_free_msg(game, "Error : Invalid path");
+		error_free_msg(game, "Error: Invalid path");
 	}
 	free_matrix(temp_map);
 }

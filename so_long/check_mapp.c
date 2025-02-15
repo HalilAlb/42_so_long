@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 16:54:53 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 08:40:31 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 11:09:38 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_rect(t_game *game)
 	i = 0;
 	while (game->map.map[i] != NULL)
 	{
-		if (j != ft_strlen(game->map.map[i]))
+		if (j != ft_strlen_endl(game->map.map[i]))
 			return (0);
 		i++;
 	}

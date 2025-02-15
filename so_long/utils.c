@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 07:57:38 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 09:25:46 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 11:13:18 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,15 @@ char	*f_strchr(const char *str, int c)
 		i++;
 	}
 	return ((char *)str + i);
+}
+size_t	ft_strlen_endl(char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] && str[i] != '\n')
+		i++;
+	return (i);
 }
 
 char	*trim_free(char *s1, char const *set)

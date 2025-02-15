@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:15:59 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 08:05:35 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 11:09:31 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	check_file_extension(char *map_file)
 {
 	size_t	i;
 
-	i = ft_strlen(map_file) - 4;
+	i = ft_strlen_endl(map_file) - 4;
 	if (ft_strncmp(&map_file[i], ".ber", 4) == 0)
 		return (1);
 	return (0);
@@ -55,7 +55,7 @@ void	check_ecp(t_game *game)
 {
 	if (game->map.exit == 0 || game->map.exit > 1)
 		error_free_msg(game, "Error: Invalid number of exit");
-	if (game->map.collectibles == 0 || game->map.collectibles < 1)
+	if (game->map.collectibles == 0)
 		error_free_msg(game, "Error: Invalid number of collectibles");
 	if (game->map.player == 0 || game->map.player > 1)
 		error_free_msg(game, "Error: Invalid number of player");
@@ -75,12 +75,12 @@ void	check_count_el(t_game *game)
 			if (check_str("ECP01", game->map.map[i][j]) == 0)
 				error_free_msg(game, "Error: Invalid element in the map");
 			if (game->map.map[i][j] == 'E')
-				game->map.exit++;
+				game->map.exit += 1;
 			else if (game->map.map[i][j] == 'C')
-				game->map.collectibles++;
+				game->map.collectibles += 1;
 			else if (game->map.map[i][j] == 'P')
 			{
-				game->map.player++;
+				game->map.player += 1;
 				game->map.player_position = (t_position){i, j};
 			}
 		}

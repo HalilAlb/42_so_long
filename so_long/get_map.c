@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:11:59 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 17:53:03 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 11:09:43 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ void	read_row(char *map_file, t_game *game)
 			error_free_msg(game, "Malloc() err");
 		i++;
 	}
-	game->map.column = ft_strlen(game->map.map[0]);
+	game->map.column = ft_strlen_endl(game->map.map[0]);
 }
 
 void	get_map(char *file_map, t_game *game)

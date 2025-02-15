@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 08:26:28 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 09:45:35 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/15 11:51:50 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 # define FLOOR_BLOCK "textures/floor.xpm"
 # define PLAYER_BLOCK "textures/arwen.xpm"
 # define COLLECTIBLES_BLOCK "textures/rings.xpm"
-# define EXIT_BLOCK "textrues/door.xpm"
+# define EXIT_BLOCK "textures/door.xpm"
 # define BLOCK_SIZE 64
 
 typedef struct s_position
@@ -96,5 +96,6 @@ void			img_to_window(t_game *game);
 char			*ft_strncpy(char *dest, const char *src, size_t n);
 char			*f_strchr(const char *str, int c);
 char			*trim_free(char *s1, char const *set);
+size_t			ft_strlen_endl(char *str);
 
 #endif
