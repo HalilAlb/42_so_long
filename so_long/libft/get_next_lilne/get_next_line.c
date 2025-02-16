@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:09:45 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 12:13:02 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/16 19:28:16 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,5 +106,10 @@ char	*get_next_line(int fd)
 		return (NULL);
 	mainline = get_main_line(putline);
 	putline = get_putremain(putline);
+	if (!putline || !*putline)
+	{
+		free(putline);
+		putline = NULL;
+	}
 	return (mainline);
 }

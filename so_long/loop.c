@@ -6,13 +6,11 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 07:32:52 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 07:32:53 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/16 18:06:00 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include    "so_long.h"
-
+#include "so_long.h"
 
 int	quit_game(t_game *game)
 {
@@ -39,7 +37,6 @@ int	on_press(int key, t_game *game)
 void	hook_n_run(t_game *game)
 {
 	mlx_hook(game->mlx_wind, 2, (1L << 0), on_press, game);
-	mlx_hook(game->mlx_wind, 17, (1L << 17),
-		quit_game, game);
+	mlx_hook(game->mlx_wind, 17, (1L << 17), quit_game, game);
 	mlx_loop(game->mlx_init);
 }

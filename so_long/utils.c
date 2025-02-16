@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 07:57:38 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 11:13:18 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/16 19:18:20 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,22 +56,22 @@ size_t	ft_strlen_endl(char *str)
 
 char	*trim_free(char *s1, char const *set)
 {
-	size_t beg;
-	size_t end;
-	char *trimmed_str;
+    size_t beg;
+    size_t end;
+    char *trimmed_str;
 
-	if (!s1 || !set)
-		return (NULL);
-	beg = 0;
-	while (s1[beg] != '\0' && f_strchr(set, s1[beg]) != NULL)
-		beg += 1;
-	end = ft_strlen(s1 + beg);
-	while (end > beg && f_strchr(set, s1[(beg + end) - 1]) != NULL)
-		end -= 1;
-	trimmed_str = malloc((end + 1) * sizeof(char));
-	if (trimmed_str == NULL)
-		return (NULL);
-	ft_strncpy(trimmed_str, (s1 + beg), end);
-	free(s1);
-	return (trimmed_str);
+    if (!s1 || !set)
+        return (NULL);
+    beg = 0;
+    while (s1[beg] != '\0' && f_strchr(set, s1[beg]) != NULL)
+        beg += 1;
+    end = ft_strlen(s1 + beg);
+    while (end > beg && f_strchr(set, s1[(beg + end) - 1]) != NULL)
+        end -= 1;
+    trimmed_str = malloc((end + 1) * sizeof(char));
+    if (trimmed_str == NULL)
+        return (NULL);
+    ft_strncpy(trimmed_str, (s1 + beg), end);
+    free(s1);
+    return (trimmed_str);
 }

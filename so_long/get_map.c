@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:11:59 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 11:09:43 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/16 19:18:01 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	read_row(char *map_file, t_game *game)
 	game->map.map[i] = NULL;
 	close(temp_map_file);
 	i = 0;
-	while (i < game->map.row - 1)
+	while (i < game->map.row)
 	{
 		game->map.map[i] = trim_free(game->map.map[i], "\n");
 		if (!game->map.map[i])

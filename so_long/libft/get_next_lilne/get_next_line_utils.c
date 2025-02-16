@@ -6,12 +6,11 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 15:06:43 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 09:26:52 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/16 18:00:19 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
 
 char	*ft_strchr(const char *s, int c)
 {
