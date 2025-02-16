@@ -1,10 +1,13 @@
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -Iinc -g
-MLXFLAGS = -L ./minilibx-linux -lmlx -I./minilibx-linux -lXext -lX11
+CFLAGS = -Wall -Wextra -Werror -g
+MLXFLAGS = -lm -lXext -lX11
 LIBFT = libft/libft.a
+LIBFTDIR = libft
 PRINTF = libft/ft_printf/libftprintf.a
+PRINTFDIR = libft/ft_printf
+GNLDIR = libft/get_next_lilne
 GNL = libft/get_next_lilne/get_next_line.a
-RM = rm -rf
+MLX = minilibx-linux/libmlx.a
 NAME = so_long
 
 SRCS = check_map.c \
@@ -24,28 +27,35 @@ OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(MAKE) -C libft/get_next_lilne
-	$(MAKE) -C libft/ft_printf
-	$(MAKE) -C libft
-	$(MAKE) -C minilibx-linux
-	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(GNL) $(PRINTF) $(MLXFLAGS) -o $(NAME)
+$(NAME): $(OBJS) $(LIBFT) $(PRINTF) $(GNL) $(MLX)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(GNL) $(PRINTF) $(MLX) $(MLXFLAGS) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -I $(LIBFTDIR) -I $(PRINTFDIR) -I $(GNLDIR) -I $(MLX) -c $< -o $@
+
+$(LIBFT):
+	@$(MAKE) -C $(LIBFTDIR) > /dev/null 2>&1
+
+$(PRINTF):
+	@$(MAKE) -C $(PRINTFDIR) > /dev/null 2>&1
+
+$(GNL): $(GNLDIR)
+	@$(MAKE) -C $(GNLDIR) > /dev/null 2>&1
 
 clean:
-	$(MAKE) clean -C libft/get_next_lilne
-	$(MAKE) clean -C libft/ft_printf
-	$(MAKE) clean -C libft
+	$(MAKE) clean -C $(GNLDIR)
+	$(MAKE) clean -C $(PRINTFDIR)
+	$(MAKE) clean -C $(LIBFTDIR)
 	$(RM) $(OBJS)
 
 fclean: clean
-	$(MAKE) fclean -C libft/get_next_lilne
-	$(MAKE) fclean -C libft/ft_printf
-	$(MAKE) fclean -C libft
+	$(MAKE) fclean -C $(GNLDIR)
+	$(MAKE) fclean -C $(PRINTFDIR)
+	$(MAKE) fclean -C $(LIBFTDIR)
 	$(RM) $(NAME)
+
 
 re: fclean all
 
 .PHONY: all clean fclean re
+

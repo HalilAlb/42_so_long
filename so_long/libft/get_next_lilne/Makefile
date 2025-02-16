@@ -1,6 +1,5 @@
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-RM = rm -f
 NAME = get_next_line.a
 SRCS = get_next_line.c get_next_line_utils.c
 OBJS = $(SRCS:.c=.o)
@@ -20,3 +19,5 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
