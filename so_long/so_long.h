@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 08:26:28 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/17 08:38:12 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/17 21:05:23 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,6 @@
 # include "libft/get_next_lilne/get_next_line.h"
 # include "libft/libft.h"
 # include "minilibx-linux/mlx.h"
-# include <fcntl.h>
-# include <stdbool.h>
-# include <stdlib.h>
 
 # define WALL_BLOCK "textures/wall.xpm"
 # define FLOOR_BLOCK "textures/floor.xpm"

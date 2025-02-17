@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:06:55 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/17 08:33:45 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/17 08:47:00 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../libft.h"
 # include <stdarg.h>
-# include <stdio.h>
 # include <unistd.h>
 
 int	ft_putchar(char c);

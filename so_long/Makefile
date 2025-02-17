@@ -8,6 +8,7 @@ PRINTFDIR = libft/ft_printf
 GNLDIR = libft/get_next_lilne
 GNL = libft/get_next_lilne/get_next_line.a
 MLX = minilibx-linux/libmlx.a
+MLXDIR = minilibx-linux
 NAME = so_long
 
 SRCS = check_map.c \
@@ -39,8 +40,11 @@ $(LIBFT):
 $(PRINTF):
 	@$(MAKE) -C $(PRINTFDIR) > /dev/null 2>&1
 
-$(GNL): $(GNLDIR)
+$(GNL):
 	@$(MAKE) -C $(GNLDIR) > /dev/null 2>&1
+
+$(MLX):
+	@$(MAKE) -C $(MLXDIR) > /dev/null 2>&1
 
 clean:
 	$(MAKE) clean -C $(GNLDIR)
@@ -52,10 +56,17 @@ fclean: clean
 	$(MAKE) fclean -C $(GNLDIR)
 	$(MAKE) fclean -C $(PRINTFDIR)
 	$(MAKE) fclean -C $(LIBFTDIR)
+	$(MAKE) clean -C $(MLXDIR)
 	$(RM) $(NAME)
 
 
 re: fclean all
+
+valgrind: $(NAME)
+	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --log-file=valgrind_so_long_out.txt ./$(NAME) $(ARGS)
+
+get:
+	git clone https://github.com/42Paris/minilibx-linux.git
 
 norm:
 	rm -rf minilibx-linux
