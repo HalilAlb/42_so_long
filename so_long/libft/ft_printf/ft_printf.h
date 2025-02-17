@@ -6,18 +6,17 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/07 09:06:55 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 09:12:06 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/17 08:33:45 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include "../libft.h"
 # include <stdarg.h>
 # include <stdio.h>
 # include <unistd.h>
-# include "../libft.h"
-
 
 int	ft_putchar(char c);
 int	ft_putstr(char *str);

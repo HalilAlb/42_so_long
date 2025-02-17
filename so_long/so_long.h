@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 08:26:28 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/16 19:18:16 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/17 08:38:12 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,5 +98,6 @@ char			*ft_strncpy(char *dest, const char *src, size_t n);
 char			*f_strchr(const char *str, int c);
 char			*trim_free(char *s1, char const *set);
 size_t			ft_strlen_endl(char *str);
-
+void			reset_flood_fill(t_map *map, t_position start, char **temp_map,
+					int *result);
 #endif

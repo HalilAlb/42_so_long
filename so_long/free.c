@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 11:09:06 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/12 17:53:01 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/17 08:32:08 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ void	error_free(t_game *game)
 	if (game->map.map)
 		free_matrix(game->map.map);
 }
-
 
 void	error_free_msg(t_game *game, char *error_msg)
 {

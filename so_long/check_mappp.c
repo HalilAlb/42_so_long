@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 10:57:15 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 14:27:50 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/17 08:25:34 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,11 @@ void	reset_flood_fill(t_map *map, t_position start, char **temp_map,
 
 void	check_path(t_game *game)
 {
-	char **temp_map = copy_map(game);
-	int result;
+	char	**temp_map;
+	int		result;
 
-
+	temp_map = copy_map(game);
 	reset_flood_fill(&game->map, game->map.player_position, temp_map, &result);
-
 	if (!result)
 	{
 		free_matrix(temp_map);

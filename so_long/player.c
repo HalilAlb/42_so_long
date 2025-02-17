@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 07:56:53 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 10:33:21 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/17 08:42:55 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,16 @@ void	put_player_block(t_game *game)
 
 void	which_block(t_game *game)
 {
-	if (game->map.map[game->map.player_position.y][game->map.player_position.x] == 'C')
+	if (game->map.map[game->map.player_position.y]
+		[game->map.player_position.x] == 'C')
 	{
-		game->map.map[game->map.player_position.y][game->map.player_position.x] = '0';
+		game->map.map[game->map.player_position.y]
+		[game->map.player_position.x] = '0';
 		game->map.collectibles -= 1;
 		return ;
 	}
-	if (game->map.map[game->map.player_position.y][game->map.player_position.x] == 'E'
+	if (game->map.map[game->map.player_position.y]
+		[game->map.player_position.x] == 'E'
 		&& game->map.collectibles == 0)
 	{
 		ft_printf("You won\n");
@@ -46,7 +49,8 @@ void	which_block(t_game *game)
 
 void	update_left_behind_block(t_game *game)
 {
-	if (game->map.map[game->map.player_position.y][game->map.player_position.x] == 'E')
+	if (game->map.map[game->map.player_position.y]
+		[game->map.player_position.x] == 'E')
 	{
 		mlx_put_image_to_window(game->mlx_init, game->mlx_wind,
 			game->block.exit, BLOCK_SIZE * game->map.player_position.x,
@@ -62,8 +66,8 @@ void	update_player_pos(t_game *game, bool horizontal, int length)
 {
 	if (horizontal)
 	{
-		if (game->map.map[game->map.player_position.y][game->map.player_position.x
-			+ length] == '1')
+		if (game->map.map[game->map.player_position.y]
+			[game->map.player_position.x + length] == '1')
 			return ;
 		update_left_behind_block(game);
 		game->map.player_position.x += length;
@@ -71,7 +75,7 @@ void	update_player_pos(t_game *game, bool horizontal, int length)
 	else
 	{
 		if (game->map.map[game->map.player_position.y
-			+ length][game->map.player_position.x] == '1')
+				+ length][game->map.player_position.x] == '1')
 			return ;
 		update_left_behind_block(game);
 		game->map.player_position.y += length;

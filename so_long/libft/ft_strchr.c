@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/11 02:18:28 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/15 09:27:26 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/17 08:33:37 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int i;
+	int	i;
 
 	if (!s)
 		return (0);

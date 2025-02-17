@@ -57,5 +57,9 @@ fclean: clean
 
 re: fclean all
 
+norm:
+	rm -rf minilibx-linux
+	norminette
+
 .PHONY: all clean fclean re
 
