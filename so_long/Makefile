@@ -71,6 +71,7 @@ get:
 norm:
 	rm -rf minilibx-linux
 	norminette
+	$(MAKE) get
 
 .PHONY: all clean fclean re
 
