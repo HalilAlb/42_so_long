@@ -6,12 +6,11 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 14:11:59 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/17 21:05:35 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/19 10:24:04 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <fcntl.h>
 
 void	get_row(char *map_file, t_game *game)
 {

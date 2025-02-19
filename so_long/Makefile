@@ -32,7 +32,7 @@ $(NAME): $(OBJS) $(LIBFT) $(PRINTF) $(GNL) $(MLX)
 	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(GNL) $(PRINTF) $(MLX) $(MLXFLAGS) -o $(NAME)
 
 %.o: %.c
-	$(CC) $(CFLAGS) -I $(LIBFTDIR) -I $(PRINTFDIR) -I $(GNLDIR) -I $(MLX) -c $< -o $@
+	$(CC) $(CFLAGS) -I $(LIBFTDIR) -I $(PRINTFDIR) -I $(GNLDIR) -I $(MLXDIR) -c $< -o $@
 
 $(LIBFT):
 	@$(MAKE) -C $(LIBFTDIR) > /dev/null 2>&1
@@ -62,7 +62,7 @@ fclean: clean
 
 re: fclean all
 
-valgrind: $(NAME)
+valgrind:
 	valgrind --leak-check=full --track-origins=yes --show-leak-kinds=all --log-file=valgrind_so_long_out.txt ./$(NAME) $(ARGS)
 
 get:

@@ -6,14 +6,13 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/08 10:11:26 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/17 08:45:50 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/19 10:20:45 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <stdbool.h>
 # include <stdlib.h>
 # include <unistd.h>
 

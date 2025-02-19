@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 07:56:53 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/17 08:42:55 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/19 13:35:29 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	put_player_block(t_game *game)
 	mlx_put_image_to_window(game->mlx_init, game->mlx_wind, game->block.wall, 0,
 		0);
 	moves_str = ft_itoa(game->moves);
-	mlx_string_put(game->mlx_init, game->mlx_wind, 32, 10, 1, moves_str);
+	mlx_string_put(game->mlx_init, game->mlx_wind, 32, 10, 4, moves_str);
 	ft_printf("Move number: %d\n", game->moves);
 	free(moves_str);
 }
