@@ -6,7 +6,7 @@
 /*   By: malbayra <malbayra@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/12 08:26:28 by malbayra          #+#    #+#             */
-/*   Updated: 2025/02/20 14:42:05 by malbayra         ###   ########.fr       */
+/*   Updated: 2025/02/20 14:42:52 by malbayra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "libft/libft.h"
 # include "minilibx-linux/mlx.h"
 # include <stdbool.h>
+#include <fcntl.h>
 
 
 # define WALL_BLOCK "textures/wall.xpm"
